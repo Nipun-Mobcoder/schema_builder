@@ -1,11 +1,15 @@
-import mongoose from 'mongoose';
+import { MetaSchemaDocument } from "@/types/schema";
+import mongoose from "mongoose";
 
-const metaSchema = new mongoose.Schema({
+const MetaSchema = new mongoose.Schema<MetaSchemaDocument>({
   collectionName: { type: String, unique: true },
-  fields: [{
-    name: String,
-    type: { type: String, enum: ['string', 'number', 'boolean', 'date'] }
-  }]
+  fields: [
+    {
+      name: String,
+      type: { type: String, enum: ["string", "number", "boolean", "date"] },
+    },
+  ],
 });
 
-export default mongoose.models.MetaSchema || mongoose.model('MetaSchema', metaSchema);
+export default mongoose.models.MetaSchema ||
+  mongoose.model<MetaSchemaDocument>("MetaSchema", MetaSchema);

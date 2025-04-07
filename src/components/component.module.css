@@ -1,4 +1,5 @@
 .container {
+  width: 100%;
   max-width: 800px;
   margin: 2rem auto;
   padding: 2rem;
@@ -109,4 +110,158 @@
 
 .submitButton:hover {
   background-color: #535bf2;
+}
+
+.sideBarSection {
+  position: sticky;
+  left: 0;
+  top: 0;
+  display: flex;
+  height: 100%;
+  width: fit-content;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #1c1f2e;
+  padding: 6;
+  padding-top: 28;
+  color: white;
+  
+}
+
+.sideBarSection > div {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 6;
+}
+
+.sideBarLink {
+  display: flex;
+  gap: 4;
+  align-items: center;
+  padding: 0.75rem;
+  justify-content: start;
+  border-radius: calc(infinity * 1px);
+}
+
+/* .sideBarLink:hover {
+  background-color: #3d92fac0;
+} */
+
+.sideBarLink > p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.collectionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.createSection {
+  background-color: #f3f4f6;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.createSection h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.formInput {
+  padding: 0.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.createButton {
+  background-color: #10b981;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.createButton:hover {
+  background-color: #059669;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+}
+
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.dataTable th,
+.dataTable td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dataTable th {
+  background-color: #f9fafb;
+  font-weight: 600;
+}
+
+.actionCell {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.deleteButton {
+  color: #ef4444;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.deleteButton:hover {
+  color: #dc2626;
+}
+
+.editButton {
+  color: #3b82f6;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.editButton:hover {
+  color: #2563eb;
+}
+
+.errorMessage {
+  color: #ef4444;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  margin-top: 1rem;
+}
+
+@media (width >= 1024px) {
+  .sideBarSection {
+    width: 264px;
+  }
 }

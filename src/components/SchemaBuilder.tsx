@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import styles from "./component.module.css";
+import SchemaService from "./api/main";
 
 type FieldDefinition = {
   name: string;
@@ -18,16 +19,10 @@ export default function SchemaBuilder() {
     }
 
     try {
-      const response = await fetch("/api/schema/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ collectionName, fields }),
-      });
+      await SchemaService.createSchema({ collectionName, fields });
 
-      if (!response.ok) throw new Error("Failed to create schema");
       alert("Schema created successfully!");
+      document.location.reload();
     } catch (error) {
       console.error(error);
       alert("Error creating schema");
